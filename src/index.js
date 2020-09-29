@@ -16,7 +16,18 @@ exports.min = function min(array) {
 }
 
 exports.max = function max(array) {
-    // if it is fine to use Math.max(...array) - it's a solution
+    if (Array.isArray(array) && array.length > 0) {
+        // if it is fine to use Math.max(...array) - it's a solution
+        let maxNumber = array[0];
+
+        array.forEach(number => {
+            if (number > maxNumber) {
+                maxNumber = number;
+            }
+        });
+
+        return maxNumber;
+    }
     return 0;
 }
 
